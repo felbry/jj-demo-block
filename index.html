@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>JJ Demo Block</title>
+    <script
+      type="module"
+      src="/src/jj-demo-block-setting.js"
+    ></script>
+    <script
+      type="module"
+      src="/src/jj-demo-block-mobile-view.js"
+    ></script>
+    <script
+      type="module"
+      src="/src/jj-demo-block-desktop-view.js"
+    ></script>
+    <script
+      type="module"
+      src="/src/jj-demo-block.js"
+    ></script>
+    <style>
+      jj-demo-block {
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <jj-demo-block-setting>
+      <jj-demo-block>
+        hello, world
+        <div slot="source">123</div>
+      </jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <jj-demo-block
+        iframeUrl="https://www.sandongyaoye.cn"
+        iframeHeight="60vh"
+      ></jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <jj-demo-block> hello, world </jj-demo-block>
+      <!-- <jj-demo-block>
+    </jj-demo-block>
+    <jj-demo-block>
+    </jj-demo-block> -->
+    </jj-demo-block-setting>
+  </body>
+</html>

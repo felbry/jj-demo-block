@@ -1,0 +1,35 @@
+{
+  "name": "jj-demo-block",
+  "private": false,
+  "version": "0.1.3",
+  "type": "module",
+  "module": "dist/jj-demo-block-bundle.js",
+  "exports": {
+    ".": {
+      "import": "./dist/jj-demo-block-bundle.js"
+    },
+    "./components/jj-demo-block": {
+      "import": "./dist/components/jj-demo-block.js"
+    },
+    "./components/jj-demo-block-setting": {
+      "import": "./dist/components/jj-demo-block-setting.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "lit": "^3.3.0",
+    "@babel/plugin-proposal-decorators": "^7.27.1",
+    "@lit/context": "^1.1.5",
+    "@unocss/preset-uno": "^66.1.2",
+    "unocss": "^66.1.2",
+    "vite": "^6.3.5",
+    "vite-plugin-babel": "^1.3.1"
+  }
+}

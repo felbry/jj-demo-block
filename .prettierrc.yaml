@@ -1,0 +1,22 @@
+printWidth: 100
+tabWidth: 2
+useTabs: false # 默认
+semi: false
+singleQuote: true
+quoteProps: 'as-needed' # [默认]
+jsxSingleQuote: false # [默认]
+trailingComma: 'es5' # [默认]
+bracketSpacing: true # [默认]
+bracketSameLine: false # [默认]
+arrowParens: 'always' # [默认]
+# range 包含 rangeStart和rangeEnd
+# parser
+# filepath
+# requirePragma
+# insertPragma
+# proseWrap
+htmlWhitespaceSensitivity: 'css' # [默认]html中空格敏感度
+vueIndentScriptAndStyle: false # [默认]
+endOfLine: 'auto' # 默认是lf 一般是unix系统；考虑日常windows和unix共同开发项目，auto是不是更通用一些？有待观察
+# embeddedLanguageFormatting
+singleAttributePerLine: true
