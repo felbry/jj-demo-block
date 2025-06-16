@@ -162,7 +162,7 @@ jj-demo-block-setting::part(setting-icon) {
 
 ### 6. 测试成果
 
-fds 创建`examples/radio/disabled.vue`、`examples/simple.vue`等演示文件，
+创建`examples/radio/disabled.vue`、`examples/simple.vue`等演示文件，
 
 在`xx.md`文件中写入
 
