@@ -49,7 +49,7 @@ export class JjDemoBlock extends LitElement {
   }
   willUpdate(changeProperties) {
     if (changeProperties.has('globalSetting')) {
-      this._devices = JSON.parse(JSON.stringify(this.globalSetting.devices))
+      this._devices = JSON.parse(JSON.stringify(this.globalSetting.devices || []))
     }
   }
 
@@ -108,28 +108,32 @@ export class JjDemoBlock extends LitElement {
         ? html`<jj-demo-block-desktop-view
             style="width: ${this._devices.find(({ checked }) => checked).width}"
           >
-            ${this.iframeUrl
-              ? html`<iframe
-                  src=${this.iframeUrl}
-                  frameborder="0"
-                  width="100%"
-                  style="height: ${this.iframeHeight}"
-                  loading="lazy"
-                ></iframe>`
-              : html`<slot></slot>`}
+            <div class="min-h-20 max-h-65vh overflow-auto ${this.iframeUrl ? '' : 'p-2'}">
+              ${this.iframeUrl
+                ? html`<iframe
+                    src=${this.iframeUrl}
+                    frameborder="0"
+                    width="100%"
+                    style="height: ${this.iframeHeight}"
+                    loading="lazy"
+                  ></iframe>`
+                : html`<slot></slot>`}
+            </div>
           </jj-demo-block-desktop-view>`
         : html`<jj-demo-block-mobile-view
             style="width: ${this._devices.find(({ checked }) => checked).width}"
           >
-            ${this.iframeUrl
-              ? html`<iframe
-                  src=${this.iframeUrl}
-                  frameborder="0"
-                  width="100%"
-                  style="height: ${this.iframeHeight}"
-                  loading="lazy"
-                ></iframe>`
-              : html`<slot></slot>`}
+            <div class="min-h-20 max-h-65vh overflow-auto ${this.iframeUrl ? '' : 'p-2'}">
+              ${this.iframeUrl
+                ? html`<iframe
+                    src=${this.iframeUrl}
+                    frameborder="0"
+                    width="100%"
+                    style="height: ${this.iframeHeight}"
+                    loading="lazy"
+                  ></iframe>`
+                : html`<slot></slot>`}
+            </div>
           </jj-demo-block-mobile-view>`}
       <div
         class="p-2 flex justify-center items-center gap-3 text-[var(--vp-c-text-2,#67676c)] text-0"

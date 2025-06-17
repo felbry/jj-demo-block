@@ -24,9 +24,7 @@ export class JjDemoBlockMobileView extends LitElement {
             ${unsafeHTML(signalIcon)}${unsafeHTML(wifiIcon)}${unsafeHTML(batteryIcon)}
           </div>
         </div>
-        <div class="min-h-20 max-h-65vh overflow-auto p-2">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </div>
     </div>`
   }

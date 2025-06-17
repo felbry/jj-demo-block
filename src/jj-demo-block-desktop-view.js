@@ -32,9 +32,7 @@ export class JjDemoBlockMobileView extends LitElement {
             </div>
           </div>
         </div>
-        <div class="min-h-20 max-h-65vh overflow-auto p-2">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </div>
     </div>`
   }

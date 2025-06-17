@@ -38,7 +38,6 @@ npm install jj-demo-block -S
 ```javascript
 import DefaultTheme from 'vitepress/theme'
 import { defineAsyncComponent, h } from 'vue'
-import 'jj-demo-block'
 // 这里的glob pattern可以根据实际的目录结构做调整
 const examples = import.meta.glob('../../examples/**/*.vue')
 
@@ -48,6 +47,9 @@ export default {
     return h('jj-demo-block-setting', null, [h(DefaultTheme.Layout)])
   },
   enhanceApp: ({ app }) => {
+    if (!import.meta.env.SSR) {
+      import('jj-demo-block')
+    }
     Object.entries(examples).forEach(([path, importFunc]) => {
       app.component(
         'exp-' +
@@ -153,7 +155,7 @@ onMounted(() => {
 
 <component v-if="is" :is="is" />
 
-<style>
+<style module>
 jj-demo-block-setting::part(setting-icon) {
   display: none;
 }
