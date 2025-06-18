@@ -7,6 +7,7 @@ import { settingContext } from './context/setting-context.js'
 import { copyIcon, copiedIcon, codeIcon, arrowIcon } from './icons.js'
 import './jj-demo-block-desktop-view.js'
 import './jj-demo-block-mobile-view.js'
+import { GloablSetting } from './model.js'
 
 // vitepress的默认主题变量
 // https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
@@ -36,7 +37,7 @@ export class JjDemoBlock extends LitElement {
    * -------------------------------------------------------------------------- */
   @consume({ context: settingContext, subscribe: true })
   @state()
-  accessor globalSetting = {}
+  accessor globalSetting = new GloablSetting()
 
   @state()
   accessor _devices = []
@@ -49,7 +50,7 @@ export class JjDemoBlock extends LitElement {
   }
   willUpdate(changeProperties) {
     if (changeProperties.has('globalSetting')) {
-      this._devices = JSON.parse(JSON.stringify(this.globalSetting.devices || []))
+      this._devices = JSON.parse(JSON.stringify(this.globalSetting.devices))
     }
   }
 
